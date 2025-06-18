@@ -1,47 +1,24 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="min-h-screen bg-gray-100">
+    <nav class="bg-blue-600 p-4 text-white flex gap-8 items-center">
+      <router-link to="/" class="flex items-center gap-2 hover:underline">
+        <span class="material-icons">home</span>
+        Home
+      </router-link>
+      <router-link to="/about" class="flex items-center gap-2 hover:underline">
+        <span class="material-icons">person</span>
+        About
+      </router-link>
+      <router-link to="/contact" class="flex items-center gap-2 hover:underline">
+        <span class="material-icons">call</span>
+        Contact
+      </router-link>
+    </nav>
+    <main class="p-8">
+      <router-view />
+    </main>
+  </div>
 </template>
+<script>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+</script>
